@@ -1,0 +1,45 @@
+<template>
+    <div id="app">
+        <header>
+            {{#each list}}
+                <router-link to='/{{name}}'>{{name}}</router-link>
+            {{/each}}
+            <!--- <router-link to="/">首页</router-link>
+             <router-link to="/about">关于我们</router-link>-->
+        </header>
+        <div>
+            <router-view></router-view>
+        </div>
+    </div>
+</template>
+
+<script>
+
+    export default {
+        name: 'App',
+        components: {}
+    }
+</script>
+
+<style>
+    #app {
+        font-family: Avenir, Helvetica, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        color: #2c3e50;
+        margin: 0px;
+    }
+
+    header {
+        background: #afa2dd;
+        height: 40px;
+        line-height: 40px;
+    }
+
+    a {
+        color: #fff;
+        font-size: 18px;
+        font-weight: bold;
+        margin-left: 20px;
+    }
+</style>

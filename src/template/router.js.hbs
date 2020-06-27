@@ -1,0 +1,16 @@
+import Vue from 'vue'
+import SRouter from './s-router'
+
+Vue.use(SRouter)
+
+export default new SRouter({
+    routes: [
+        {{#each list }}
+        {
+            name: '{{name}}',
+            path:  `/{{name}}`,
+            component: () => import(`./views/{{file}}`)
+        },
+        {{/each}}
+    ]
+})

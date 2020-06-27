@@ -5,6 +5,7 @@ class SRouter {
         Vue = _vue
         Vue.mixin({
             beforeCreate() {
+                //这里的router就是我们在new Vue的时候传递的router对象
                 if (this.$options.router) {
                     Vue.prototype.$srouter = this.$options.router
                     this.$options.router.init()
@@ -26,13 +27,13 @@ class SRouter {
     //路由初始化函数
     init() {
         //启动路由
-        // 1.监听hashchange事件
-        this.handleEvents()
-        //2.处理路由
-        this.createRouterMap()
-        //3.初始化组件router-link router-view
+        //1.初始化组件router-link router-view
         this.initComponent()
-        //4.处理钩子函数
+        //2.监听hashchange事件
+        this.handleEvents()
+        //3.处理路由
+        this.createRouterMap()
+        //3.处理钩子函数
     }
 
     //注册监听事件
